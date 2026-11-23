@@ -27,7 +27,7 @@ class ServerStack(Stack):
             self,
             "DatabaseSG",
             vpc=vpc,
-            description="RDS MySQL: port 3306 only from the web servers' security group",
+            description="RDS MySQL: port 3306 only from the web servers security group",
             allow_all_outbound=False,
         )
         db_sg.add_ingress_rule(web_sg, ec2.Port.tcp(3306), "MySQL from web servers only")
